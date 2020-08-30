@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Utilities
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsmiAboutProgram_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Программа Utilities содержит ряд небольших программ,\nкоторые могут пригодится в повседневном использовании ПК.\n\n\t\tAuthor: Paul Winter", "About program");
         }
     }
 }
