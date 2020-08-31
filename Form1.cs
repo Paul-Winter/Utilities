@@ -23,12 +23,7 @@ namespace Utilities
             InitializeComponent();
             random = new Random();
             metrica = new Dictionary<string, double>();
-            metrica.Add("mm", 1);
-            metrica.Add("cm", 10);
-            metrica.Add("dm", 100);
-            metrica.Add("m", 1000);
-            metrica.Add("km", 1000000);
-            metrica.Add("mile", 1609344);
+
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -192,6 +187,73 @@ namespace Utilities
             double m2 = metrica[cbTo.Text];
             double n = Convert.ToDouble(tbFrom.Text);
             tbTo.Text = (n * m1 / m2).ToString();
+        }
+
+        private void btnSwap_Click(object sender, EventArgs e)
+        {
+            string temp = cbFrom.Text;
+            cbFrom.Text = cbTo.Text;
+            cbTo.Text = temp;
+        }
+
+        private void cbMetric_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbMetric.Text)
+            {
+                case "вес":
+                    metrica.Clear();
+                    metrica.Add("g", 1);
+                    metrica.Add("oz", 283);
+                    metrica.Add("lb", 453.6);
+                    metrica.Add("kg", 1000);
+                    metrica.Add("t", 1000000);
+                    cbFrom.Items.Clear();
+                    cbFrom.Items.Add("g");
+                    cbFrom.Items.Add("oz");
+                    cbFrom.Items.Add("lb");
+                    cbFrom.Items.Add("kg");
+                    cbFrom.Items.Add("t");
+                    cbFrom.Text = "g";
+                    cbTo.Items.Clear();
+                    cbTo.Items.Add("g");
+                    cbTo.Items.Add("oz");
+                    cbTo.Items.Add("lb");
+                    cbTo.Items.Add("kg");
+                    cbTo.Items.Add("t");
+                    cbTo.Text = "g";
+                    break;
+                    
+                case "длина":
+                    metrica.Clear();
+                    metrica.Add("mm", 1);
+                    metrica.Add("cm", 10);
+                    metrica.Add("dm", 100);
+                    metrica.Add("m", 1000);
+                    metrica.Add("km", 1000000);
+                    metrica.Add("mile", 1609344);
+                    cbFrom.Items.Clear();
+                    cbFrom.Items.Add("mm");
+                    cbFrom.Items.Add("cm");
+                    cbFrom.Items.Add("dm");
+                    cbFrom.Items.Add("m");
+                    cbFrom.Items.Add("km");
+                    cbFrom.Items.Add("mile");
+                    cbFrom.Text = "mm";
+                    cbTo.Items.Clear();
+                    cbTo.Items.Add("mm");
+                    cbTo.Items.Add("cm");
+                    cbTo.Items.Add("dm");
+                    cbTo.Items.Add("m");
+                    cbTo.Items.Add("km");
+                    cbTo.Items.Add("mile");
+                    cbTo.Text = "mm";
+                    break;
+                default:
+                    metrica.Clear();
+                    cbFrom.Items.Clear();
+                    cbTo.Items.Clear();
+                    break;
+            }
         }
     }
 }
