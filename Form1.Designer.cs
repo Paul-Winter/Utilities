@@ -124,7 +124,7 @@
             // btnPlus
             // 
             this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnPlus.Location = new System.Drawing.Point(228, 131);
+            this.btnPlus.Location = new System.Drawing.Point(20, 35);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(75, 62);
             this.btnPlus.TabIndex = 0;
@@ -135,7 +135,7 @@
             // btnMinus
             // 
             this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMinus.Location = new System.Drawing.Point(8, 131);
+            this.btnMinus.Location = new System.Drawing.Point(20, 202);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(75, 62);
             this.btnMinus.TabIndex = 1;
@@ -146,7 +146,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnReset.Location = new System.Drawing.Point(106, 211);
+            this.btnReset.Location = new System.Drawing.Point(196, 126);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(97, 53);
             this.btnReset.TabIndex = 2;
@@ -158,7 +158,7 @@
             // 
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCount.Location = new System.Drawing.Point(127, 54);
+            this.lblCount.Location = new System.Drawing.Point(48, 140);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(21, 24);
             this.lblCount.TabIndex = 3;
