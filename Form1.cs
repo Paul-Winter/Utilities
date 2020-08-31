@@ -94,5 +94,20 @@ namespace Utilities
         {
             Clipboard.SetText(tbRandom.Text);
         }
+
+        private void tmsiInsertDate_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(DateTime.Now.ToShortDateString() + "\n");
+        }
+
+        private void tsmiInsertTime_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(DateTime.Now.ToShortTimeString() + "\n");
+        }
+
+        private void tsmiClear_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.Clear();
+        }
     }
 }
