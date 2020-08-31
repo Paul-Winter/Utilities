@@ -13,7 +13,9 @@ namespace Utilities
     public partial class MainForm : Form
     {
         int count = 0;
-        Random random;
+        static Random random;
+        string password;
+        char[] specChars = new char[] {'~', '@', '#', '$', '%', '^', '&', '*', '(', ')'};
         
         public MainForm()
         {
@@ -108,6 +110,72 @@ namespace Utilities
         private void tsmiClear_Click(object sender, EventArgs e)
         {
             rtbNotepad.Clear();
+        }
+
+        private void tsmiSaveNote_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbNotepad.SaveFile("notepad.rtf");
+            }
+            catch
+            {
+                MessageBox.Show("Error save");
+            }
+        }
+
+        void LoadNotepad()
+        {
+            try
+            {
+                rtbNotepad.LoadFile("notepad.rtf");
+            }
+            catch
+            {
+                MessageBox.Show("Error load");
+            }
+        }
+
+        private void tsmiLoadNote_Click(object sender, EventArgs e)
+        {
+            LoadNotepad();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoadNotepad();
+            clbPassword.SetItemChecked(0, true);
+        }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            password = "";
+            if (clbPassword.CheckedItems.Count == 0)
+                return;
+
+            for (int count = 0; count < nudPassLength.Value; count++)
+            {
+                int i = random.Next(clbPassword.CheckedItems.Count);
+                string s = clbPassword.CheckedItems[i].ToString();
+                switch (s)
+                {
+                    case "Цифры": password += random.Next(10); break;
+                    case "Прописные буквы": password += Convert.ToChar(random.Next(65, 91)); break;
+                    case "Строчные буквы": password += Convert.ToChar(random.Next(97, 123)); break;
+                    default: password += specChars[random.Next(specChars.Length)]; break;
+                }
+                tbPassword.Text = password;
+            }
+        }
+
+        private void btnCopyPassword_Click(object sender, EventArgs e)
+        {
+                Clipboard.SetText(password);
+        }
+
+        private void tsmiInsertBuffer_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(Clipboard.GetText());
         }
     }
 }

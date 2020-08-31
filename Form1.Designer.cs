@@ -31,10 +31,26 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.notepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmsiInsertDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInsertTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSaveNote = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoadNote = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAboutProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.btnPassword = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudPassLength = new System.Windows.Forms.NumericUpDown();
+            this.clbPassword = new System.Windows.Forms.CheckedListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.rtbNotepad = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbRandom = new System.Windows.Forms.CheckBox();
             this.btnRandomCopy = new System.Windows.Forms.Button();
             this.btnRandomClear = new System.Windows.Forms.Button();
@@ -50,23 +66,17 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.rtbNotepad = new System.Windows.Forms.RichTextBox();
-            this.notepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmsiInsertDate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiInsertTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiSaveNote = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLoadNote = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCopyPassword = new System.Windows.Forms.Button();
+            this.tsmiInsertBuffer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -97,6 +107,70 @@
             this.tsmiExit.Text = "Exit";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
+            // notepadToolStripMenuItem
+            // 
+            this.notepadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiInsertBuffer,
+            this.tmsiInsertDate,
+            this.tsmiInsertTime,
+            this.tsmiClear,
+            this.toolStripSeparator1,
+            this.tsmiSaveNote,
+            this.tsmiLoadNote});
+            this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
+            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.notepadToolStripMenuItem.Text = "Notepad";
+            // 
+            // tmsiInsertDate
+            // 
+            this.tmsiInsertDate.Name = "tmsiInsertDate";
+            this.tmsiInsertDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.tmsiInsertDate.Size = new System.Drawing.Size(213, 22);
+            this.tmsiInsertDate.Text = "Insert Date";
+            this.tmsiInsertDate.Click += new System.EventHandler(this.tmsiInsertDate_Click);
+            // 
+            // tsmiInsertTime
+            // 
+            this.tsmiInsertTime.Name = "tsmiInsertTime";
+            this.tsmiInsertTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.tsmiInsertTime.Size = new System.Drawing.Size(213, 22);
+            this.tsmiInsertTime.Text = "Insert Time";
+            this.tsmiInsertTime.Click += new System.EventHandler(this.tsmiInsertTime_Click);
+            // 
+            // tsmiClear
+            // 
+            this.tsmiClear.Name = "tsmiClear";
+            this.tsmiClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.tsmiClear.Size = new System.Drawing.Size(213, 22);
+            this.tsmiClear.Text = "Clear";
+            this.tsmiClear.Click += new System.EventHandler(this.tsmiClear_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(210, 6);
+            // 
+            // tsmiSaveNote
+            // 
+            this.tsmiSaveNote.Name = "tsmiSaveNote";
+            this.tsmiSaveNote.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveNote.Size = new System.Drawing.Size(213, 22);
+            this.tsmiSaveNote.Text = "Save note";
+            this.tsmiSaveNote.Click += new System.EventHandler(this.tsmiSaveNote_Click);
+            // 
+            // tsmiLoadNote
+            // 
+            this.tsmiLoadNote.Name = "tsmiLoadNote";
+            this.tsmiLoadNote.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.tsmiLoadNote.Size = new System.Drawing.Size(213, 22);
+            this.tsmiLoadNote.Text = "Load note";
+            this.tsmiLoadNote.Click += new System.EventHandler(this.tsmiLoadNote_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -116,6 +190,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -125,6 +200,103 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(319, 313);
             this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnCopyPassword);
+            this.tabPage4.Controls.Add(this.tbPassword);
+            this.tabPage4.Controls.Add(this.btnPassword);
+            this.tabPage4.Controls.Add(this.label4);
+            this.tabPage4.Controls.Add(this.nudPassLength);
+            this.tabPage4.Controls.Add(this.clbPassword);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(311, 287);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Пароли";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbPassword.Location = new System.Drawing.Point(30, 225);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(251, 29);
+            this.tbPassword.TabIndex = 4;
+            // 
+            // btnPassword
+            // 
+            this.btnPassword.Location = new System.Drawing.Point(161, 170);
+            this.btnPassword.Name = "btnPassword";
+            this.btnPassword.Size = new System.Drawing.Size(120, 23);
+            this.btnPassword.TabIndex = 3;
+            this.btnPassword.Text = "Создать пароль";
+            this.btnPassword.UseVisualStyleBackColor = true;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "количество символов";
+            // 
+            // nudPassLength
+            // 
+            this.nudPassLength.Location = new System.Drawing.Point(161, 27);
+            this.nudPassLength.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudPassLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPassLength.Name = "nudPassLength";
+            this.nudPassLength.Size = new System.Drawing.Size(120, 20);
+            this.nudPassLength.TabIndex = 1;
+            this.nudPassLength.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            // 
+            // clbPassword
+            // 
+            this.clbPassword.CheckOnClick = true;
+            this.clbPassword.FormattingEnabled = true;
+            this.clbPassword.Items.AddRange(new object[] {
+            "Цифры",
+            "Прописные буквы",
+            "Строчные буквы",
+            "Спец. символы: ~ , @ , # , $ , % , ^ , & , * , ( , )"});
+            this.clbPassword.Location = new System.Drawing.Point(30, 76);
+            this.clbPassword.Name = "clbPassword";
+            this.clbPassword.Size = new System.Drawing.Size(251, 64);
+            this.clbPassword.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.rtbNotepad);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(311, 287);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Заметка";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // rtbNotepad
+            // 
+            this.rtbNotepad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbNotepad.Location = new System.Drawing.Point(0, 0);
+            this.rtbNotepad.Name = "rtbNotepad";
+            this.rtbNotepad.Size = new System.Drawing.Size(311, 287);
+            this.rtbNotepad.TabIndex = 0;
+            this.rtbNotepad.Text = "";
             // 
             // tabPage2
             // 
@@ -146,6 +318,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Генератор";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(136, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 29);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "<";
             // 
             // cbRandom
             // 
@@ -320,95 +502,23 @@
             this.btnPlus.UseVisualStyleBackColor = true;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
-            // label1
+            // btnCopyPassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(136, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 29);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "<";
+            this.btnCopyPassword.Location = new System.Drawing.Point(30, 170);
+            this.btnCopyPassword.Name = "btnCopyPassword";
+            this.btnCopyPassword.Size = new System.Drawing.Size(120, 23);
+            this.btnCopyPassword.TabIndex = 5;
+            this.btnCopyPassword.Text = "Копировать в буфер";
+            this.btnCopyPassword.UseVisualStyleBackColor = true;
+            this.btnCopyPassword.Click += new System.EventHandler(this.btnCopyPassword_Click);
             // 
-            // tabPage3
+            // tsmiInsertBuffer
             // 
-            this.tabPage3.Controls.Add(this.rtbNotepad);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(311, 287);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Заметка";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // rtbNotepad
-            // 
-            this.rtbNotepad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbNotepad.Location = new System.Drawing.Point(0, 0);
-            this.rtbNotepad.Name = "rtbNotepad";
-            this.rtbNotepad.Size = new System.Drawing.Size(311, 287);
-            this.rtbNotepad.TabIndex = 0;
-            this.rtbNotepad.Text = "";
-            // 
-            // notepadToolStripMenuItem
-            // 
-            this.notepadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tmsiInsertDate,
-            this.tsmiInsertTime,
-            this.tsmiClear,
-            this.toolStripSeparator1,
-            this.tsmiSaveNote,
-            this.tsmiLoadNote});
-            this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
-            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.notepadToolStripMenuItem.Text = "Notepad";
-            // 
-            // tmsiInsertDate
-            // 
-            this.tmsiInsertDate.Name = "tmsiInsertDate";
-            this.tmsiInsertDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.tmsiInsertDate.Size = new System.Drawing.Size(206, 22);
-            this.tmsiInsertDate.Text = "Insert Date";
-            this.tmsiInsertDate.Click += new System.EventHandler(this.tmsiInsertDate_Click);
-            // 
-            // tsmiInsertTime
-            // 
-            this.tsmiInsertTime.Name = "tsmiInsertTime";
-            this.tsmiInsertTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.T)));
-            this.tsmiInsertTime.Size = new System.Drawing.Size(206, 22);
-            this.tsmiInsertTime.Text = "Insert Time";
-            this.tsmiInsertTime.Click += new System.EventHandler(this.tsmiInsertTime_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // tsmiSaveNote
-            // 
-            this.tsmiSaveNote.Name = "tsmiSaveNote";
-            this.tsmiSaveNote.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.tsmiSaveNote.Size = new System.Drawing.Size(206, 22);
-            this.tsmiSaveNote.Text = "Save note";
-            // 
-            // tsmiLoadNote
-            // 
-            this.tsmiLoadNote.Name = "tsmiLoadNote";
-            this.tsmiLoadNote.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.L)));
-            this.tsmiLoadNote.Size = new System.Drawing.Size(206, 22);
-            this.tsmiLoadNote.Text = "Load note";
-            // 
-            // tsmiClear
-            // 
-            this.tsmiClear.Name = "tsmiClear";
-            this.tsmiClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.C)));
-            this.tsmiClear.Size = new System.Drawing.Size(206, 22);
-            this.tsmiClear.Text = "Clear";
-            this.tsmiClear.Click += new System.EventHandler(this.tsmiClear_Click);
+            this.tsmiInsertBuffer.Name = "tsmiInsertBuffer";
+            this.tsmiInsertBuffer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.tsmiInsertBuffer.Size = new System.Drawing.Size(210, 22);
+            this.tsmiInsertBuffer.Text = "Insert From Buffer";
+            this.tsmiInsertBuffer.Click += new System.EventHandler(this.tsmiInsertBuffer_Click);
             // 
             // MainForm
             // 
@@ -422,16 +532,20 @@
             this.MinimumSize = new System.Drawing.Size(335, 375);
             this.Name = "MainForm";
             this.Text = "Utilities";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,6 +585,14 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveNote;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadNote;
         private System.Windows.Forms.ToolStripMenuItem tsmiClear;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Button btnPassword;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudPassLength;
+        private System.Windows.Forms.CheckedListBox clbPassword;
+        private System.Windows.Forms.Button btnCopyPassword;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInsertBuffer;
     }
 }
 
