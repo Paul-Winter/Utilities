@@ -51,8 +51,48 @@ namespace Utilities
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            int gen = random.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
-            lblRandom.Text = gen.ToString();
+            if (numericUpDown1.Value > numericUpDown2.Value)
+            {
+                MessageBox.Show("Uncorrect input data\nPlease, try again", "ERROR!");
+                var temp = numericUpDown1.Value;
+                numericUpDown1.Value = numericUpDown2.Value;
+                numericUpDown2.Value = temp;
+            }
+            int gen;
+            gen = random.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+
+            if (cbRandom.Checked)
+            {
+                int i = 0;                              //
+                while (tbRandom.Text.IndexOf(gen.ToString()) != -1)
+                {
+                    gen = random.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+                    i++;                                //
+                    if (i > 1000) break;                //
+                    //lblRandom.Text = gen.ToString();
+                    //tbRandom.AppendText(gen + "\n");
+                }
+                if (i <= 1000)
+                {
+                    lblRandom.Text = gen.ToString();
+                    tbRandom.AppendText(gen + "\n");
+                }
+            }
+            else                                        //
+            {
+                lblRandom.Text = gen.ToString();
+                tbRandom.AppendText(gen + "\n");
+            }
+        }
+
+        private void btnRandomClear_Click(object sender, EventArgs e)
+        {
+            tbRandom.Clear();
+        }
+
+        private void btnRandomCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbRandom.Text);
         }
     }
 }

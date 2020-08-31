@@ -34,24 +34,29 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAboutProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnPlus = new System.Windows.Forms.Button();
-            this.btnMinus = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.btnRandom = new System.Windows.Forms.Button();
-            this.lblRandom = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbRandom = new System.Windows.Forms.CheckBox();
+            this.btnRandomCopy = new System.Windows.Forms.Button();
+            this.btnRandomClear = new System.Windows.Forms.Button();
+            this.tbRandom = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRandom = new System.Windows.Forms.Label();
+            this.btnRandom = new System.Windows.Forms.Button();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnMinus = new System.Windows.Forms.Button();
+            this.btnPlus = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -97,14 +102,151 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(319, 313);
             this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.cbRandom);
+            this.tabPage2.Controls.Add(this.btnRandomCopy);
+            this.tabPage2.Controls.Add(this.btnRandomClear);
+            this.tabPage2.Controls.Add(this.tbRandom);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.lblRandom);
+            this.tabPage2.Controls.Add(this.btnRandom);
+            this.tabPage2.Controls.Add(this.numericUpDown2);
+            this.tabPage2.Controls.Add(this.numericUpDown1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(311, 287);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Генератор";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cbRandom
+            // 
+            this.cbRandom.AutoSize = true;
+            this.cbRandom.Location = new System.Drawing.Point(192, 153);
+            this.cbRandom.Name = "cbRandom";
+            this.cbRandom.Size = new System.Drawing.Size(106, 17);
+            this.cbRandom.TabIndex = 9;
+            this.cbRandom.Text = "без повторений";
+            this.cbRandom.UseVisualStyleBackColor = true;
+            // 
+            // btnRandomCopy
+            // 
+            this.btnRandomCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRandomCopy.Location = new System.Drawing.Point(9, 222);
+            this.btnRandomCopy.Name = "btnRandomCopy";
+            this.btnRandomCopy.Size = new System.Drawing.Size(155, 44);
+            this.btnRandomCopy.TabIndex = 8;
+            this.btnRandomCopy.Text = "Копировать";
+            this.btnRandomCopy.UseVisualStyleBackColor = true;
+            this.btnRandomCopy.Click += new System.EventHandler(this.btnRandomCopy_Click);
+            // 
+            // btnRandomClear
+            // 
+            this.btnRandomClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRandomClear.Location = new System.Drawing.Point(9, 153);
+            this.btnRandomClear.Name = "btnRandomClear";
+            this.btnRandomClear.Size = new System.Drawing.Size(155, 44);
+            this.btnRandomClear.TabIndex = 7;
+            this.btnRandomClear.Text = "Очистить";
+            this.btnRandomClear.UseVisualStyleBackColor = true;
+            this.btnRandomClear.Click += new System.EventHandler(this.btnRandomClear_Click);
+            // 
+            // tbRandom
+            // 
+            this.tbRandom.Location = new System.Drawing.Point(182, 176);
+            this.tbRandom.Multiline = true;
+            this.tbRandom.Name = "tbRandom";
+            this.tbRandom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbRandom.Size = new System.Drawing.Size(123, 105);
+            this.tbRandom.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(222, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 24);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "До";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(47, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "От";
+            // 
+            // lblRandom
+            // 
+            this.lblRandom.AutoSize = true;
+            this.lblRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblRandom.Location = new System.Drawing.Point(187, 91);
+            this.lblRandom.Name = "lblRandom";
+            this.lblRandom.Size = new System.Drawing.Size(27, 29);
+            this.lblRandom.TabIndex = 3;
+            this.lblRandom.Text = "0";
+            // 
+            // btnRandom
+            // 
+            this.btnRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRandom.Location = new System.Drawing.Point(9, 85);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(155, 44);
+            this.btnRandom.TabIndex = 2;
+            this.btnRandom.Text = "Генерировать";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(202, 42);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            -294967296,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            -294967296,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(79, 20);
+            this.numericUpDown2.TabIndex = 1;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(28, 42);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            -294967296,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            -294967296,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(79, 20);
+            this.numericUpDown1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -120,43 +262,15 @@
             this.tabPage1.Text = "Счётчик";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // lblCount
             // 
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.lblRandom);
-            this.tabPage2.Controls.Add(this.btnRandom);
-            this.tabPage2.Controls.Add(this.numericUpDown2);
-            this.tabPage2.Controls.Add(this.numericUpDown1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(311, 287);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Генератор";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnPlus
-            // 
-            this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnPlus.Location = new System.Drawing.Point(20, 35);
-            this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(75, 62);
-            this.btnPlus.TabIndex = 0;
-            this.btnPlus.Text = "+";
-            this.btnPlus.UseVisualStyleBackColor = true;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
-            // 
-            // btnMinus
-            // 
-            this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMinus.Location = new System.Drawing.Point(20, 202);
-            this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(75, 62);
-            this.btnMinus.TabIndex = 1;
-            this.btnMinus.Text = "-";
-            this.btnMinus.UseVisualStyleBackColor = true;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            this.lblCount.AutoSize = true;
+            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCount.Location = new System.Drawing.Point(48, 140);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(21, 24);
+            this.lblCount.TabIndex = 3;
+            this.lblCount.Text = "0";
             // 
             // btnReset
             // 
@@ -169,70 +283,37 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // lblCount
+            // btnMinus
             // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCount.Location = new System.Drawing.Point(48, 140);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(21, 24);
-            this.lblCount.TabIndex = 3;
-            this.lblCount.Text = "0";
+            this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnMinus.Location = new System.Drawing.Point(20, 202);
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.Size = new System.Drawing.Size(75, 62);
+            this.btnMinus.TabIndex = 1;
+            this.btnMinus.Text = "-";
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
-            // numericUpDown1
+            // btnPlus
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(29, 58);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDown1.TabIndex = 0;
+            this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPlus.Location = new System.Drawing.Point(20, 35);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(75, 62);
+            this.btnPlus.TabIndex = 0;
+            this.btnPlus.Text = "+";
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
-            // numericUpDown2
+            // label1
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(203, 58);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(79, 20);
-            this.numericUpDown2.TabIndex = 1;
-            // 
-            // btnRandom
-            // 
-            this.btnRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRandom.Location = new System.Drawing.Point(74, 215);
-            this.btnRandom.Name = "btnRandom";
-            this.btnRandom.Size = new System.Drawing.Size(168, 53);
-            this.btnRandom.TabIndex = 2;
-            this.btnRandom.Text = "генерировать";
-            this.btnRandom.UseVisualStyleBackColor = true;
-            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
-            // 
-            // lblRandom
-            // 
-            this.lblRandom.AutoSize = true;
-            this.lblRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblRandom.Location = new System.Drawing.Point(110, 135);
-            this.lblRandom.Name = "lblRandom";
-            this.lblRandom.Size = new System.Drawing.Size(21, 24);
-            this.lblRandom.TabIndex = 3;
-            this.lblRandom.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(48, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "От";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(223, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 24);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "До";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(136, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 29);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "<";
             // 
             // MainForm
             // 
@@ -249,12 +330,12 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +361,11 @@
         private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox tbRandom;
+        private System.Windows.Forms.Button btnRandomClear;
+        private System.Windows.Forms.Button btnRandomCopy;
+        private System.Windows.Forms.CheckBox cbRandom;
+        private System.Windows.Forms.Label label1;
     }
 }
 
