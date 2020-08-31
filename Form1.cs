@@ -248,11 +248,7 @@ namespace Utilities
                     cbTo.Items.Add("mile");
                     cbTo.Text = "mm";
                     break;
-                default:
-                    metrica.Clear();
-                    cbFrom.Items.Clear();
-                    cbTo.Items.Clear();
-                    break;
+                default: break;
             }
         }
     }
